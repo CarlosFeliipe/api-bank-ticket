@@ -4,9 +4,10 @@
   "description": "",
   "main": "app.ts",
   "scripts": {
-    "test": "jest",
     "dev": "npx nodemon -r dotenv/config --exec ts-node --files src/server.ts | pino-pretty",
-    "build": "nest build"
+    "build": "nest build",
+    "prettier": "npx prettier --write --ignore-unknown .",
+    "test": "jest --runInBand"
   },
   "keywords": [],
   "author": "",

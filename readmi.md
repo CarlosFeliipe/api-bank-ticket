@@ -1,4 +1,4 @@
-# Projeto back-end com Typescript, Jest e lambda
+# Projeto back-end com Typescript e Jest
 Este projeto usa dotenv para definir as variáveis ​​de ambiente.
 
 # Configurar Variáveis ​​de Ambiente
@@ -26,4 +26,10 @@ Este projeto tem um arquivo chamado .env.example que instrui quais são as vari�
 
 ```convenio
   curl --location --request GET 'http://localhost:8080/boleto/828900000008509100181711109222814012358741712157'
+```
+
+# Para rodar os testes unitário
+
+```test
+  npm run test
 ```
