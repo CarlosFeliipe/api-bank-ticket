@@ -1,7 +1,11 @@
 import dayjs from "dayjs";
 import { ServiceError } from "../../../../config/error";
 import logger from "../../../../config/logger";
-import { IGetTicketRule, IGetTicketService } from "../interfaces/ticket";
+import {
+  IGetTicketRule,
+  IGetTicketService,
+  ResponseBank,
+} from "../interfaces/ticket";
 
 export default class GetTicketRule implements IGetTicketRule {
   private getTicketService: IGetTicketService;
@@ -10,7 +14,7 @@ export default class GetTicketRule implements IGetTicketRule {
     this.getTicketService = getTicketService;
   }
 
-  execute = async (code: string): Promise<any> => {
+  execute = async (code: string): Promise<ResponseBank> => {
     logger.info("[GetTicketRule]::: regra de negócio do boleto");
 
     try {
