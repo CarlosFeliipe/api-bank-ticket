@@ -26,7 +26,7 @@ export default class GetTicketController implements IGetTicketController {
       const resp = await this.getTicketRule.execute(code);
       response.status(StatusCodes.OK).json(resp);
 
-      logger.info("[GetTicket] informações do boleto retornados com sucesso.");
+      logger.info("[GetTicket] informações do boleto retornadas com sucesso.");
 
       return next();
     } catch (error: any) {
