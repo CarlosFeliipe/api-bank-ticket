@@ -1,5 +1,8 @@
 # Projeto back-end com Typescript e Jest
-Este Projeto foi desenvolvido para fins da empresa Ewally, trata-se de um bank, onde você passa por parametro alguma linha digitavel, e o backend retorna informações dessa linha digitavel, como data, valor, barCode e verifica se o mesmo é válido. 
+Este Projeto foi desenvolvido para fins da empresa Ewally, trata-se de um bank, onde você passa por parametro alguma linha digitavel, e o backend retorna informações dessa linha digitavel, como data, valor, barCode e verifica se o mesmo é válido.
+
+# Tecnologias
+Essa api foi desenvolvida com nodejs e 100% de typescript, padrão de projeto SOLID e AWS Lambda, AWS Gateway.
 
 Este projeto usa dotenv para definir as variáveis ​​de ambiente.
 

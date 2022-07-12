@@ -13,12 +13,16 @@ export default class GetTicketService implements IGetTicketService {
     const axiosInstance = instanceService(url);
 
     try {
-      logger.info("SERVICE-TICKET::: Obtendo valores do boleto");
+      logger.info("[GetTicketService]::: Obtendo valores do boleto");
 
-      const { data } = await axiosInstance.get(`/bank/?code=${code}`);
+      const { data } = await axiosInstance.get("/bank", {
+        headers: {
+          code,
+        },
+      });
       return data;
     } catch (error) {
-      const errorMessage = "Ocorre ao tentar obter valores do boleto.";
+      const errorMessage = "Ocorreu um erro ao tentar obter valores do boleto.";
       logger.error(errorMessage);
       throw new ServiceError(errorMessage);
     }

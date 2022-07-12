@@ -2,14 +2,13 @@ import { NextFunction, Request, Response } from "express";
 import { ServiceError } from "../../../../config/error";
 import logger from "../../../../config/logger";
 import { StatusCodes } from "../../../../enums/status-code";
-import { ticketOrConvenio } from "../../ticket";
-import { IGetTicketController, IGetTicketService } from "../interfaces/ticket";
+import { IGetTicketController, IGetTicketRule } from "../interfaces/ticket";
 
 export default class GetTicketController implements IGetTicketController {
-  private getTicketService: IGetTicketService;
+  private getTicketRule: IGetTicketRule;
 
-  constructor(getTicketService: IGetTicketService) {
-    this.getTicketService = getTicketService;
+  constructor(getTicketRule: IGetTicketRule) {
+    this.getTicketRule = getTicketRule;
   }
 
   handle = async (
@@ -17,13 +16,18 @@ export default class GetTicketController implements IGetTicketController {
     response: Response,
     next: NextFunction
   ): Promise<Response | void> => {
-    logger.info("TICKET-CONTROLLER::: tentando buscar informações do boleto");
+    logger.info(
+      "[GetTicketController]::: tentando buscar informações do boleto"
+    );
 
     try {
       const { code } = request.params;
 
-      const resp = await ticketOrConvenio(code);
+      const resp = await this.getTicketRule.execute(code);
       response.status(StatusCodes.OK).json(resp);
+
+      logger.info("[GetTicket] informações do boleto retornados com sucesso.");
+
       return next();
     } catch (error: any) {
       if (error.isAxiosError) {
