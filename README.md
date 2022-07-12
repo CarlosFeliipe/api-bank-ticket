@@ -1,13 +1,13 @@
-# Projeto back-end com Typescript e Jest
-Este Projeto foi desenvolvido para fins da empresa Ewally, trata-se de um bank, onde você passa por parametro alguma linha digitavel, e o backend retorna informações dessa linha digitavel, como data, valor, barCode e verifica se o mesmo é válido.
+# Sobre o Projeto
+Este Projeto foi desenvolvido para fins da empresa Ewally, trata-se de uma API, onde você passa por parametro alguma linha digitavel, e o backend retorna informações dessa linha digitavel, como data, valor, barCode e verifica se o mesmo é válido.
 
-# Tecnologias
-Essa api foi desenvolvida com nodejs e 100% de typescript, padrão de projeto SOLID e AWS Lambda, AWS Gateway.
-
-Este projeto usa dotenv para definir as variáveis ​​de ambiente.
+# Tecnologias Utilizadas
+Padrão de Projeto - SOLID
+Tecnologias - Node.js e 100% Typescript
+AWS - Lambda e Gateway
 
 # Configurar Variáveis ​​de Ambiente
-Este projeto tem um arquivo chamado .env.example que instrui quais são as variáveis ​​env necessárias no arquivo .env
+Crie um arquivo .env, na raiz do projeto, tem um arquivo chamado .env.example que instrui quais são as variáveis ​​env necessárias no arquivo .env
 
 # Executar aplicativo no ambiente de desenvolvimento
 ```bash
