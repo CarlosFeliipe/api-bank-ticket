@@ -25,6 +25,8 @@ Crie um arquivo .env, na raiz do projeto, tem um arquivo chamado .env.example qu
   or
   npm run build
 ```
+# Swagger
+http://localhost:8080/documentacion/
 
 # Curl de exemplo
 
